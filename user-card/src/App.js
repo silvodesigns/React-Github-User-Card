@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
+import logo from './git.png';
 
 class App extends React.Component{
   constructor(){
@@ -41,7 +42,9 @@ class App extends React.Component{
 
     if(this.state.user !== null){
       information = <div className="card">
-        <img src={this.state.user.avatar_url} alt="profile-pic"/>
+        <img src ={logo} alt="git logo" className="git"/>
+        <img src={this.state.user.avatar_url} alt="profile-pic" className="profile-pic"/>
+        <br></br>
         <a href={this.state.user.html_url}>link to GitHub Page</a>
         <h1>Username: {this.state.user.login}</h1>
         <h3>followers: {this.state.followers}</h3>
